@@ -1,0 +1,35 @@
+profile: view
+ceip_policy_disclosed: TRUE
+
+shared:
+  ingress_domain: "tap.tkg.tanzulab.io"
+
+contour:
+  envoy:
+    service:
+      type: LoadBalancer 
+
+tap_gui:
+  service_type: ClusterIP
+  app_config:
+    app:
+      baseUrl: http://tap-gui.tap.tkg.tanzulab.io
+    catalog:
+      locations:
+        - type: url
+          target: https://GIT-CATALOG-URL/catalog-info.yaml
+    backend:
+      baseUrl: http://tap-gui.tap.tkg.tanzulab.io
+      cors:
+        origin: http://tap-gui.tap.tkg.tanzulab.io
+    kubernetes:
+      serviceLocatorMethod:
+        type: 'multiTenant'
+      clusterLocatorMethods:
+        - type: 'config'
+          clusters:
+            - url: CLUSTER-URL
+              name: CLUSTER-NAME
+              authProvider: serviceAccount
+              serviceAccountToken: CLUSTER-TOKEN
+              skipTLSVerify: TRUE-OR-FALSE-VALUE
