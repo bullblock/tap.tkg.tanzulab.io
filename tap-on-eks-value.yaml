@@ -60,6 +60,8 @@ accelerator:
     service_type: ClusterIP
 
 contour:
+  infrastructure_provider: aws
   envoy:
     service:
-      type: LoadBalancer
+      aws:
+        LBType: nlb
