@@ -34,7 +34,7 @@ tap_gui:
     catalog:
       locations:
         - type: url
-          target: https://raw.githubusercontent.com/bullblock/tap.tanzulab.io/main/catalog-info.yaml
+          target: https://raw.githubusercontent.com/bullblock/tap.tkg.tanzulab.io/master/catalog-info.yaml
     backend:
       baseUrl: http://tap-gui.tkg.tanzulab.io
       cors:
