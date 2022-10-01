@@ -1,7 +1,7 @@
 profile: full
 ceip_policy_disclosed: TRUE
 buildservice:
-  kp_default_repository: "dev.registry.tanzu.vmware.com/sliang-tap/build-service"
+  kp_default_repository: "dev.registry.tanzu.vmware.com/sliang/build-service"
   kp_default_repository_username: "xinstevenl@vmware.com"
   kp_default_repository_password: "#Dr34mJ0b#"
   tanzunet_username: "xinstevenl@vmware.com"
@@ -10,35 +10,35 @@ buildservice:
 supply_chain: basic
 
 cnrs:
-  domain_name: "tkg.tanzulab.io"
+  domain_name: "tap.tkg.tanzulab.io"
 
 ootb_supply_chain_basic:
   registry:
     server: "dev.registry.tanzu.vmware.com"
-    repository: "sliang-tap/supply-chain"
+    repository: "sliang/supply-chain"
   gitops:
     ssh_secret: ""
 
 learningcenter:
-  ingressDomain: "learningcenter.tkg.tanzulab.io"
+  ingressDomain: "learningcenter.tap.tkg.tanzulab.io"
   ingressClass: contour
 
 
 tap_gui:
   service_type: ClusterIP
   ingressEnabled: "true"
-  ingressDomain: "tkg.tanzulab.io"
+  ingressDomain: "tap.tkg.tanzulab.io"
   app_config:
     app:
-      baseUrl: http://tap-gui.tkg.tanzulab.io
+      baseUrl: http://tap-gui.tap.tkg.tanzulab.io
     catalog:
       locations:
         - type: url
           target: https://raw.githubusercontent.com/bullblock/tap.tkg.tanzulab.io/master/catalog-info.yaml
     backend:
-      baseUrl: http://tap-gui.tkg.tanzulab.io
+      baseUrl: http://tap-gui.tap.tkg.tanzulab.io
       cors:
-        origin: http://tap-gui.tkg.tanzulab.io
+        origin: http://tap-gui.tap.tkg.tanzulab.io
 
 metadata_store:
   app_service_type: NodePort
